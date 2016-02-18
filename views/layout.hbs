@@ -3,6 +3,34 @@
   <head>
     <title>{{title}}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+      <script src="scripts/jquery-1.12.0.min.js"></script>
+      <script src="scripts/marked.js"></script>
+      <script type="text/javascript">
+          $(document).ready(function() {
+
+              $('#btnSubmit').on("click", function() {
+
+                  var _jsonData = $('#txtJSON').val();
+
+                  $.post("/api/table", { "obj":_jsonData }, function(data, status) {
+                      if (data) {
+                          if (data.err)
+                            $('#txtResult').val(data.err.toString());
+                          else if (data.result) {
+                              $('#txtResult').val(data.result);
+                              $('#divMarked').html(marked(data.result));
+                          }
+
+                      }
+                  });
+
+              });
+
+
+          });
+
+
+      </script>
   </head>
   <body>
     {{{body}}}
