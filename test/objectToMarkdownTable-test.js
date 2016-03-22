@@ -196,7 +196,7 @@ describe("objectToMarkdown list tests", function() {
 
     it("attempt to convert a json object into a MarkDown table", function(done) {
         //var output = objectToMarkdownTable.convertObjectToMarkdownList(testObj, null);
-        var output = objectToMarkdownTable.convertObjectToMarkdownTable(testObj, null);
+        var output = objectToMarkdownTable.convertObjectToHtmlList(testObj, null);
         console.log('');
         console.log(output);
         done();

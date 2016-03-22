@@ -23,10 +23,16 @@
                   var _jsonData = $('#txtJSON').val();
 
                   var endPoint = "";
-                  if (outputType === 'Table')
-                    endPoint = '/api/table';
+                  if (outputType === 'markdownTable')
+                    endPoint = '/api/markdowntable';
+                  else if (outputType === 'markdownList')
+                    endPoint = '/api/markdownlist';
+                  else if (outputType === 'htmlTable')
+                    endPoint = '/api/htmltable';
+                  else if (outputType === 'htmlList')
+                    endPoint = '/api/htmllist';
                   else
-                    endPoint = '/api/list';
+                    endPoint = '/api/markdownlist';
 
                   $.post(endPoint, {"obj": _jsonData}, function () {
 
