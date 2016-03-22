@@ -150,50 +150,54 @@ describe("objectToMarkdown list tests", function() {
         //    }
         //]};
 
-        testObj = {
-            "fieldName1":"fieldValue1",
-            "fieldNameWithDepth": {
-                "innerFieldName1":"innerFieldValue1",
-                "innerFieldName2":"innerFieldValue2",
-                "innerFieldName3":"innerFieldValue3",
-            },
-            "fieldName2":"fieldValue2",
-            "fieldName3":"fieldValue3",
-            "fieldName4":"fieldValue4",
-            "array1":[
-                {
-                    "fieldName1":"fieldValue1",
-                    "innerArray1":[
-                        {
-                            "innerFieldName1":"innerFieldValue1",
-                            "innerFieldName2":"innerFieldValue2",
-                            "innerObject1":{
-                                "innerObjectFieldName1":"innerObjectFieldValue1",
-                                "innerObjectFieldName2":"innerObjectFieldValue1",
-                                "innerObjectFieldName3":"innerObjectFieldValue1",
-                            }
-                        },
-                        {
-                            "innerFieldName1":"innerFieldValue1",
-                            "innerFieldName2":"innerFieldValue2"
-                        },
-                        {
-                            "innerFieldName1":"innerFieldValue1",
-                            "innerFieldName2":"innerFieldValue2"
-                        }
-                    ]
-                },
-                {
-                    "fieldName2":"fieldValue2"
-                },
-            ],
-            "fieldName5":"fieldValue5"
-        };
+        //testObj = {
+        //    "fieldName1":"fieldValue1",
+        //    "fieldNameWithDepth": {
+        //        "innerFieldName1":"innerFieldValue1",
+        //        "innerFieldName2":"innerFieldValue2",
+        //        "innerFieldName3":"innerFieldValue3",
+        //    },
+        //    "fieldName2":"fieldValue2",
+        //    "fieldName3":"fieldValue3",
+        //    "fieldName4":"fieldValue4",
+        //    "array1":[
+        //        {
+        //            "fieldName1":"fieldValue1",
+        //            "innerArray1":[
+        //                {
+        //                    "innerFieldName1":"innerFieldValue1",
+        //                    "innerFieldName2":"innerFieldValue2",
+        //                    "innerObject1":{
+        //                        "innerObjectFieldName1":"innerObjectFieldValue1",
+        //                        "innerObjectFieldName2":"innerObjectFieldValue1",
+        //                        "innerObjectFieldName3":"innerObjectFieldValue1",
+        //                    }
+        //                },
+        //                {
+        //                    "innerFieldName1":"innerFieldValue1",
+        //                    "innerFieldName2":"innerFieldValue2"
+        //                },
+        //                {
+        //                    "innerFieldName1":"innerFieldValue1",
+        //                    "innerFieldName2":"innerFieldValue2"
+        //                }
+        //            ]
+        //        },
+        //        {
+        //            "fieldName2":"fieldValue2"
+        //        },
+        //    ],
+        //    "fieldName5":"fieldValue5"
+        //};
+
+
+        testObj = {"card":"2","numbers":{"Conway":[1,11,21,1211,111221,312211],"Fibonacci":[0,1,1,2,3,5,8,13,21,34]}};
     });
 
     it("attempt to convert a json object into a MarkDown table", function(done) {
-        //var output = objectToMarkdownTable.convertObjectToMarkdown(testObj);
-        var output = objectToMarkdownTable.convertObjectToMarkdown(testObj, null);
+        //var output = objectToMarkdownTable.convertObjectToMarkdownList(testObj, null);
+        var output = objectToMarkdownTable.convertObjectToMarkdownTable(testObj, null);
+        console.log('');
         console.log(output);
         done();
     });

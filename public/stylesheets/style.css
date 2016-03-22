@@ -11,11 +11,13 @@ table {
 
 }
 
-td {
-  border: solid 1px #333;
-  padding:3px !important;
+th {
+  background:#666666;
+  color:#ffffff;
+  font-weight:bold;
 }
 
-table {
-  border-collapse: collapse;
+th,td {
+  border:solid 1px #333;
+  padding: 3px !important;
 }
