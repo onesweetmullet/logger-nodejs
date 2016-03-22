@@ -37,7 +37,7 @@ describe("objectToMarkdown list tests", function() {
     it("attempt to convert a json object to a MarkDown list", function(done) {
         var output = convertObjectToNestedList(testObj);
 
-        console.log(output);
+        //console.log(output);
 
         done();
     });
